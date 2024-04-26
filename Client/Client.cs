@@ -13,6 +13,7 @@ namespace Client
         public Client() 
         {
             RegisterCommand("played", new Action(() => { TriggerServerEvent("PlayedTime:Server:GetPlayedTime"); }), false);
+            TriggerEvent("chat:addSuggestion", "/played", "Returns how much time the player has spent on this server in hours.");
         }
 
         [EventHandler("PlayedTime:Client:ReturnPlayedTime")]
